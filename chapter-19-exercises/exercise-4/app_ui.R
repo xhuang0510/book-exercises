@@ -33,24 +33,26 @@ library("shiny")
 
 # Define a variable `sidebar_content` as a `sidebarPanel()` UI element
 # containing the following information:
-
+sidebar_content <- sidebarPanel(
+  
   # A `sliderInput()` for the 'percentile' value, labeled "Income Percentile".
   # This slider should let the user pick a range between 0 and 100
-
-
+  sliderInput(inputId = "percentile", labrl = "Income Percentile", min = 0, max = 100, value = c(0,100))
+)
 # Define a variable `main_content` as a `mainPanel()` UI element
 # containing the following information:
-
+main_content <- mainPanel(
   # A `plotOutput()` element showing the 'plot' output (defined in the server)
-
+  plotOutput(outputId = "plot")
 
   # A paragraph with a hyperlink to the data source
   # http://gabriel-zucman.eu/usdina/
-
+)
 # Define a variable `growth_panel` for your second page. It should be a
 # `tabPanel()` with a title "Growth Chart" to represent the second tab.
 # This layout will contain the following elements:
-
+growth_panel <- tabPanel(
+  title = "Growth Chart",
   # A `titlePanel()` with the text "Income growth 1980-2014"
   
 
